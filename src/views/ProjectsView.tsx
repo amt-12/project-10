@@ -21,7 +21,7 @@ const ProjectsView: React.FC = () => {
     const loadProjects = () => {
       setIsLoading(true);
       axios
-        .get('http://localhost:5001/api/projectManagement/getAllProjects')
+        .get('https://test-job-bs88.onrender.com/api/projectManagement/getAllProjects')
         .then((response) => {
           setProjects(response.data.data); // Assuming your API returns the project data in 'data'
           setError(null); // Clear any previous errors
@@ -63,7 +63,7 @@ const ProjectsView: React.FC = () => {
         };
   
         axios
-          .post('http://localhost:5001/api/projectManagement/createProject', projectData)
+          .post('https://test-job-bs88.onrender.com/api/projectManagement/createProject', projectData)
           .then((response) => {
             if (response) {
               message.success('Project created successfully');

@@ -44,7 +44,7 @@ const ProjectDetailView: React.FC = () => {
 
     setIsLoading(true);
     axios
-      .get(`http://localhost:5001/api/projectManagement/getProjectById/${id}`)
+      .get(`https://test-job-bs88.onrender.com/api/projectManagement/getProjectById/${id}`)
       .then((response) => {
         setProject(response.data.data);
         setError(null);
@@ -63,7 +63,7 @@ const ProjectDetailView: React.FC = () => {
       setIsDeleting(true);
       axios
         .delete(
-          `http://localhost:5001/api/projectManagement/deleteProject/${id}`
+          `https://test-job-bs88.onrender.com/api/projectManagement/deleteProject/${id}`
         )
         .then(() => {
           toast.success("Project deleted successfully!");
@@ -83,7 +83,7 @@ const ProjectDetailView: React.FC = () => {
     setIsRemovingMember(true);
     axios
       .delete(
-        `http://localhost:5001/api/projectManagement/removeTeamMember/${id}/${memberId}`
+        `https://test-job-bs88.onrender.com/api/projectManagement/removeTeamMember/${id}/${memberId}`
       )
       .then(() => {
         setProject((prev) =>
@@ -120,7 +120,7 @@ const ProjectDetailView: React.FC = () => {
   
         axios
           .put(
-            `http://localhost:5001/api/projectManagement/updateProject/${id}`,
+            `https://test-job-bs88.onrender.com/api/projectManagement/updateProject/${id}`,
             safeProject
           )
           .then(() => {

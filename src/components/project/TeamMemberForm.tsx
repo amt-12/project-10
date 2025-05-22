@@ -21,7 +21,7 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({ projectId, onSuccess })
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('http://localhost:5001/api/userManagement/getAllUsers')
+      .get('https://test-job-bs88.onrender.com/api/userManagement/getAllUsers')
       .then((response) => {
         setUsers(response.data.data);
         setIsLoading(false);
@@ -62,7 +62,7 @@ const TeamMemberForm: React.FC<TeamMemberFormProps> = ({ projectId, onSuccess })
     setIsSubmitting(true);
 
     axios
-      .post(`http://localhost:5001/api/teamManagement/projects/${projectId}/team`, {
+      .post(`https://test-job-bs88.onrender.com/api/teamManagement/projects/${projectId}/team`, {
         userIds,
       })
       .then(() => {
